@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional y página personal para búsqueda de empleo." />
+  <title>Tu Nombre | Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Hola, soy</p>
+      <h1>Tu Nombre</h1>
+      <p class="hero__text">Desarrollador/a web | Diseñador/a UX | Especialista en soluciones digitales</p>
+      <p class="hero__cta">Busco nuevas oportunidades profesionales en empresas con propósito.</p>
+      <a href="#contacto" class="button">Contáctame</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="tabs-section section">
+      <div class="container">
+        <div class="section-buttons" role="tablist" aria-label="Secciones del portafolio">
+          <button class="section-button active" data-target="sobre-mi" type="button">Sobre mí</button>
+          <button class="section-button" data-target="experiencia" type="button">Experiencia</button>
+          <button class="section-button" data-target="habilidades" type="button">Habilidades</button>
+          <button class="section-button" data-target="portfolio" type="button">Portafolio</button>
+          <button class="section-button" data-target="contacto" type="button">Contacto</button>
+        </div>
+
+        <article id="sobre-mi" class="section-panel active" role="tabpanel">
+          <h2>Sobre mí</h2>
+          <p>Soy un profesional orientado a resultados con experiencia en creación de soluciones digitales que conectan con las personas. Me especializo en construir proyectos claros, accesibles y adaptables.</p>
+          <p>Trabajo bien en equipo, aprendo rápido y me entusiasma resolver problemas reales con tecnología.</p>
+        </article>
+
+        <article id="experiencia" class="section-panel" role="tabpanel">
+          <h2>Experiencia</h2>
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Proyecto / Empresa 1</h3>
+              <p class="card__subtitle">Rol: Desarrollador/a Web</p>
+              <p>Creé una aplicación web para mejorar la comunicación interna y optimizar procesos. Usé HTML, CSS, JavaScript y frameworks modernos para entregar una experiencia rápida y accesible.</p>
+            </article>
+            <article class="card">
+              <h3>Proyecto / Empresa 2</h3>
+              <p class="card__subtitle">Rol: Diseñador/a UX</p>
+              <p>Diseñé interfaces centradas en el usuario para una plataforma digital, desde prototipos hasta pruebas de usabilidad.</p>
+            </article>
+          </div>
+        </article>
+
+        <article id="habilidades" class="section-panel" role="tabpanel">
+          <h2>Habilidades</h2>
+          <ul class="skills-list">
+            <li>HTML5 / CSS3 / JavaScript</li>
+            <li>Responsive design</li>
+            <li>Git / GitHub</li>
+            <li>Diseño UI / UX</li>
+            <li>Comunicación efectiva</li>
+          </ul>
+        </article>
+
+        <article id="portfolio" class="section-panel" role="tabpanel">
+          <h2>Portafolio</h2>
+          <p>Si tienes ejemplos de proyectos, enlaces o resultados cuantificables, añádelos aquí para mostrar tu trabajo.</p>
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Ejemplo de Proyecto</h3>
+              <p>Descripción corta del proyecto, el impacto y las tecnologías usadas.</p>
+            </article>
+            <article class="card">
+              <h3>Otro Proyecto</h3>
+              <p>Descripción breve con resultados y mejoras logradas.</p>
+            </article>
+          </div>
+        </article>
+
+        <article id="contacto" class="section-panel" role="tabpanel">
+          <h2>Contacto</h2>
+          <p>Estoy disponible para trabajar en nuevos retos. Escríbeme y conversemos sobre cómo puedo aportar a tu equipo.</p>
+          <div class="contact-grid">
+            <div>
+              <strong>Email</strong>
+              <p>azulbertucci98@gmail.com</p>
+            </div>
+            <div>
+              <strong>LinkedIn</strong>
+              <p><a href="https://www.linkedin.com/in/azul-bertucci-76b8b2214/" target="_blank" rel="noreferrer">linkedin.com/in/azul-bertucci-76b8b2214</a></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>© 2026 Tu Nombre. Página personal para búsqueda de empleo.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.section-button');
+      const panels = document.querySelectorAll('.section-panel');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-target');
+          
+          // Remover clase active de todos
+          buttons.forEach((btn) => btn.classList.remove('active'));
+          panels.forEach((panel) => panel.classList.remove('active'));
+          
+          // Añadir clase active al elemento actual
+          button.classList.add('active');
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
